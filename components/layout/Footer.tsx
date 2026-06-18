@@ -16,7 +16,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-neutral-dark-DEFAULT text-neutral-light-white border-t border-white/5">
+    <footer className="bg-neutral-dark-DEFAULT text-primary border-t border-white/5">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -35,7 +35,7 @@ export default function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="text-neutral-light/70 font-sans text-sm leading-relaxed max-w-xs">
+            <p className="text-primary/70 font-sans text-sm leading-relaxed max-w-xs">
               Premium heavy equipment and fleet solutions for industrial
               operations. Delivering reliability and technical expertise since
               2026.
@@ -67,7 +67,7 @@ export default function Footer() {
                   <li key={item}>
                     <Link
                       href={`/${item.toLowerCase().replace(" ", "-")}`}
-                      className="text-neutral-light/60 hover:text-secondary flex items-center group transition-colors"
+                      className="text-primary/60 hover:text-secondary flex items-center group transition-colors"
                     >
                       <ArrowRight className="w-3 h-3 mr-2 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                       {item}
@@ -84,20 +84,20 @@ export default function Footer() {
               Contact Us
             </h4>
             <ul className="space-y-4 text-sm font-sans">
-              <li className="flex items-start space-x-3 text-neutral-light/60">
+              <li className="flex items-start space-x-3 text-primary/60">
                 <MapPin className="w-5 h-5 text-secondary shrink-0" />
                 <span>
                   Jl. Kahayan Raya No. 123, <br />
                   Palangkaraya, Kalimantan Tengah
                 </span>
               </li>
-              <li className="flex items-center space-x-3 text-neutral-light/60">
+              <li className="flex items-center space-x-3 text-primary/60">
                 <Phone className="w-5 h-5 text-secondary shrink-0" />
                 <span>+62 812-3456-7890</span>
               </li>
-              <li className="flex items-center space-x-3 text-neutral-light/60">
+              <li className="flex items-center space-x-3 text-primary/60">
                 <Mail className="w-5 h-5 text-secondary shrink-0" />
-                <span>info@teknikapesona.com</span>
+                <span>info@pesonakahayan.co.id</span>
               </li>
               <li className="pt-2">
                 <Link
@@ -127,7 +127,7 @@ export default function Footer() {
               ].map((focus) => (
                 <span
                   key={focus}
-                  className="bg-primary px-3 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest border border-white/10"
+                  className="bg-primary px-3 py-1 text-amber-100 rounded-sm text-[10px] font-bold uppercase tracking-widest border border-white/10"
                 >
                   {focus}
                 </span>

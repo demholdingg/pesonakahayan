@@ -10,9 +10,9 @@ const navItems = [
     name: "About Us",
     href: "/about",
     submenu: [
-      { name: "Company Profile", href: "/about#profile" },
-      { name: "Vision & Mission", href: "/about#vision" },
-      { name: "Business Focus", href: "/about#focus" },
+      { name: "Company Profile", href: "/about/company-profile" },
+      { name: "Vision & Mission", href: "/about/vision-mission" },
+      { name: "Business Focus", href: "/about/business-focus" },
     ],
   },
   {
@@ -38,7 +38,6 @@ const navItems = [
       { name: "Fabrication", href: "/services/fabrication" },
     ],
   },
-  { name: "Projects", href: "/projects" },
   { name: "Supporting Documents", href: "/docs" },
   { name: "Contact", href: "/contact" },
 ];
@@ -59,24 +58,39 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      className={`fixed top-0 z-50 w-full transition-all duration-500 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md py-2"
-          : "bg-white py-4"
-      } border-b border-neutral-100`}
+          ? "bg-white/95 backdrop-blur-md shadow-lg py-2 border-b border-neutral-100"
+          : "bg-transparent py-4 border-b border-transparent"
+      }`}
     >
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo SVG */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="bg-secondary p-2 rounded-sm transform group-hover:rotate-12 transition-transform">
-              <HardHat className="w-6 h-6 text-neutral-dark" />
+          <Link
+            href="/"
+            className="flex items-center space-x-2 md:space-x-3 group shrink-0"
+          >
+            <div className="shrink-0 p-1 transform group-hover:rotate-6 transition-transform duration-300">
+              <img
+                src={scrolled ? "/images/logo.png" : "/images/logo-white.png"}
+                alt="Logo"
+                className="w-10 h-10 md:w-12 md:h-12 object-contain"
+              />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl md:text-2xl font-heading font-bold text-primary leading-none">
+              <span
+                className={`text-base md:text-lg font-heading font-bold leading-none transition-colors ${
+                  scrolled ? "text-primary" : "text-white"
+                }`}
+              >
                 TEKNIKA PESONA
               </span>
-              <span className="text-sm font-heading font-bold text-secondary tracking-[0.2em]">
+              <span
+                className={`text-xxs font-heading font-bold tracking-[0.2em] transition-colors ${
+                  scrolled ? "text-secondary" : "text-white/80"
+                }`}
+              >
                 KAHAYAN
               </span>
             </div>
@@ -92,7 +106,13 @@ export default function Navbar() {
                     onMouseEnter={() => setActiveDropdown(item.name)}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    <button className="flex items-center space-x-1 px-4 py-2 font-sans font-medium text-primary hover:text-secondary transition-colors">
+                    <button
+                      className={`flex items-center space-x-1 px-4 py-2 font-sans font-medium transition-colors ${
+                        scrolled
+                          ? "text-primary hover:text-secondary"
+                          : "text-white hover:text-secondary"
+                      }`}
+                    >
                       <span>{item.name}</span>
                       <ChevronDown
                         className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === item.name ? "rotate-180" : ""}`}
@@ -117,7 +137,11 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="px-4 py-2 font-sans font-medium text-primary hover:text-secondary transition-colors"
+                    className={`px-4 py-2 font-sans font-medium transition-colors ${
+                      scrolled
+                        ? "text-primary hover:text-secondary"
+                        : "text-white hover:text-secondary"
+                    }`}
                   >
                     {item.name}
                   </Link>
@@ -128,7 +152,11 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-primary p-2 hover:bg-neutral-50 rounded-md transition-colors"
+            className={`lg:hidden p-2 rounded-md transition-colors ${
+              scrolled
+                ? "text-primary hover:bg-neutral-50"
+                : "text-white hover:bg-white/10"
+            }`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
