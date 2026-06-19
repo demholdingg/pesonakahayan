@@ -1,13 +1,8 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import {
-  ChevronRight,
-  ArrowUpFromLine,
-  Layers,
-  ShieldCheck,
-  ArrowRight,
-} from "lucide-react";
+import Image from "next/image";
+import { ChevronRight, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Boomlift & Scissor Lift Rental | Teknika Pesona Kahayan",
@@ -17,22 +12,32 @@ export const metadata: Metadata = {
 
 const details = [
   {
-    title: "Electric Scissor Lifts",
+    title: "LiuGong Scissor Lifts",
     description:
-      "Quiet, emission-free operation for indoor maintenance and tight spaces.",
-    icon: <Layers className="w-10 h-10" />,
+      "Quiet, emission-free electric operation for indoor maintenance and tight spaces with LiuGong reliability.",
+    image: "/images/products/liugong-scissorlift.jpg",
+    brandLogo: "/images/brands/liugong-logos.png",
   },
   {
-    title: "Diesel Boom Lifts",
+    title: "Zoomlion Boom Lifts",
     description:
-      "Robust power and reach for outdoor construction and rugged terrains.",
-    icon: <ArrowUpFromLine className="w-10 h-10" />,
+      "Robust power and articulating reach for outdoor construction and rugged terrains engineered by Zoomlion.",
+    image: "/images/products/zoomlion-boomlift.jpg",
+    brandLogo: "/images/brands/zoomlion-logo.png",
   },
   {
-    title: "Safety Compliance",
+    title: "Zoomlion Scissor Lifts",
     description:
-      "All units are regularly inspected and certified to meet international safety standards.",
-    icon: <ShieldCheck className="w-10 h-10" />,
+      "High-performance aerial platforms engineered by Zoomlion for safe, stable, and efficient vertical reach.",
+    image: "/images/products/zoomlion-scissorlift.jpg",
+    brandLogo: "/images/brands/zoomlion-logo.png",
+  },
+  {
+    title: "LiuGong Boom Lifts",
+    description:
+      "Reliable and highly maneuverable boom lifts from LiuGong, perfect for heavy-duty outdoor construction.",
+    image: "/images/products/liugong-boomliftt.png",
+    brandLogo: "/images/brands/liugong-logos.png",
   },
 ];
 
@@ -70,16 +75,33 @@ export default function BoomliftServicePage() {
             {details.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-8 border-b-4 border-transparent hover:border-[#FACC15] transition-all duration-300 shadow-sm"
+                className="bg-white border-b-4 border-transparent hover:border-[#FACC15] transition-all duration-300 shadow-sm group overflow-hidden flex flex-col"
               >
-                <div className="text-[#111111] mb-6">{item.icon}</div>
-                <h3 className="text-2xl font-bold text-[#111111] mb-4 font-barlow-condensed uppercase">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 mb-8">{item.description}</p>
-                <button className="inline-flex items-center font-bold text-sm uppercase tracking-wider text-[#111111] gap-2 hover:gap-4 transition-all group">
-                  Rent Now <ArrowRight className="w-4 h-4 text-[#FACC15]" />
-                </button>
+                <div className="relative h-80 w-full overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-8 flex-grow flex flex-col">
+                  <div className="relative h-10 w-32 mb-6 grayscale hover:grayscale-0 transition-all duration-300">
+                    <Image
+                      src={item.brandLogo}
+                      alt="Brand Logo"
+                      fill
+                      className="object-contain object-left"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#111111] mb-4 font-barlow-condensed uppercase">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 mb-8 flex-grow">{item.description}</p>
+                  <button className="inline-flex items-center font-bold text-sm uppercase tracking-wider text-[#111111] gap-2 hover:gap-4 transition-all group mt-auto w-fit">
+                    Rent Now <ArrowRight className="w-4 h-4 text-[#FACC15]" />
+                  </button>
+                </div>
               </div>
             ))}
           </div>

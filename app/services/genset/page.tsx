@@ -1,13 +1,8 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import {
-  ChevronRight,
-  Zap,
-  VolumeX,
-  ShieldCheck,
-  ArrowRight,
-} from "lucide-react";
+import Image from "next/image";
+import { ChevronRight, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Silent Diesel Genset Services | Teknika Pesona Kahayan",
@@ -17,22 +12,34 @@ export const metadata: Metadata = {
 
 const details = [
   {
-    title: "Silent Technology",
-    description:
-      "Advanced soundproofing systems for power generation in residential areas and noise-sensitive sites.",
-    icon: <VolumeX className="w-10 h-10" />,
+    title: "Perkins Silent Genset",
+    description: "High-quality silent diesel generators by Perkins, ensuring reliable and quiet power for sensitive environments.",
+    image: "/images/products/genseet.png",
+    brandLogo: "/images/brands/perkins-logo.svg",
   },
   {
-    title: "Continuous Power",
-    description:
-      "High-endurance diesel generators capable of providing 24/7 power for remote industrial operations.",
-    icon: <Zap className="w-10 h-10" />,
+    title: "Cummins Open Type Genset",
+    description: "Robust open-type generators from Cummins offering maximum power output and easy maintenance access.",
+    image: "https://images.unsplash.com/photo-1542484674-1db5e33dd919?q=80&w=800&auto=format&fit=crop",
+    brandName: "Cummins",
   },
   {
-    title: "Load Monitoring",
-    description:
-      "Integrated monitoring systems to ensure stable power delivery and prevent electrical overloads.",
-    icon: <ShieldCheck className="w-10 h-10" />,
+    title: "Kubota Control Panel",
+    description: "Advanced Kubota control panels for precise monitoring, automation, and synchronization of power systems.",
+    image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?q=80&w=800&auto=format&fit=crop",
+    brandName: "Kubota",
+  },
+  {
+    title: "MTU Genset",
+    description: "Heavy-duty MTU gensets built for mission-critical applications and unmatched operational endurance.",
+    image: "https://images.unsplash.com/photo-1533036814674-d2c67b938c5d?q=80&w=800&auto=format&fit=crop",
+    brandName: "MTU",
+  },
+  {
+    title: "Cummins Industrial Genset",
+    description: "Powerful Cummins industrial generators designed to handle continuous high-load electrical demands.",
+    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=800&auto=format&fit=crop",
+    brandName: "Cummins",
   },
 ];
 
@@ -51,14 +58,14 @@ export default function GensetServicePage() {
               Services
             </Link>
             <ChevronRight className="w-4 h-4 mx-2" />
-            <span className="text-[#FACC15]">Genset Silent Diesel</span>
+            <span className="text-[#FACC15]">Genset & Power</span>
           </nav>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-barlow-condensed uppercase italic tracking-tighter">
-            Silent Diesel <span className="text-[#FACC15]">Gensets</span>
+            Power Generation <span className="text-[#FACC15]">Solutions</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl">
             Ensuring uninterrupted operations with reliable, quiet, and
-            fuel-efficient power generation solutions.
+            fuel-efficient power generation systems.
           </p>
         </div>
       </section>
@@ -70,17 +77,41 @@ export default function GensetServicePage() {
             {details.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-8 border-b-4 border-transparent hover:border-[#FACC15] transition-all duration-300 shadow-sm"
+                className="bg-white border-b-4 border-transparent hover:border-[#FACC15] transition-all duration-300 shadow-sm group overflow-hidden flex flex-col"
               >
-                <div className="text-[#111111] mb-6">{item.icon}</div>
-                <h3 className="text-2xl font-bold text-[#111111] mb-4 font-barlow-condensed uppercase">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 mb-8">{item.description}</p>
-                <button className="inline-flex items-center font-bold text-sm uppercase tracking-wider text-[#111111] gap-2 hover:gap-4 transition-all group">
-                  Technical Specs{" "}
-                  <ArrowRight className="w-4 h-4 text-[#FACC15]" />
-                </button>
+                <div className="relative h-80 w-full overflow-hidden bg-gray-200">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-8 flex-grow flex flex-col">
+                  <div className="h-10 mb-6 flex items-center">
+                    {item.brandLogo ? (
+                      <div className="relative h-10 w-32 grayscale hover:grayscale-0 transition-all duration-300">
+                        <Image
+                          src={item.brandLogo}
+                          alt={`${item.title} Logo`}
+                          fill
+                          className="object-contain object-left"
+                        />
+                      </div>
+                    ) : (
+                      <span className="font-bold text-lg text-gray-400 uppercase tracking-wider">
+                        {item.brandName}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#111111] mb-4 font-barlow-condensed uppercase">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 mb-8 flex-grow">{item.description}</p>
+                  <button className="inline-flex items-center font-bold text-sm uppercase tracking-wider text-[#111111] gap-2 hover:gap-4 transition-all group mt-auto w-fit">
+                    Technical Specs <ArrowRight className="w-4 h-4 text-[#FACC15]" />
+                  </button>
+                </div>
               </div>
             ))}
           </div>

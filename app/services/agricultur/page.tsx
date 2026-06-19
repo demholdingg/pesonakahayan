@@ -1,13 +1,8 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import {
-  ChevronRight,
-  Tractor,
-  Settings,
-  Sprout,
-  ArrowRight,
-} from "lucide-react";
+import Image from "next/image";
+import { ChevronRight, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Agriculture & Combine Harvester Services | Teknika Pesona Kahayan",
@@ -17,23 +12,29 @@ export const metadata: Metadata = {
 
 const details = [
   {
-    title: "Harvesting Solutions",
-    description:
-      "High-performance combine harvesters designed to maximize yield and efficiency during harvest seasons.",
-    icon: <Tractor className="w-10 h-10" />,
+    title: "Zoomlion Combine Harvester",
+    description: "High-performance combine harvesters by Zoomlion designed to maximize yield and efficiency during harvest seasons.",
+    image: "/images/products/harvesterr.jpg",
+    brandLogo: "/images/brands/zoomlion-logo.png",
   },
   {
-    title: "Technical Support",
-    description:
-      "On-site field support and maintenance services specialized for complex agricultural machinery.",
-    icon: <Settings className="w-10 h-10" />,
+    title: "LiuGong Agriculture Support",
+    description: "Dependable LiuGong support vehicles providing robust technical and field assistance for complex farming needs.",
+    image: "/images/products/liugong-agriculture.webp",
+    brandLogo: "/images/brands/liugong-logos.png",
   },
   {
-    title: "Yield Optimization",
-    description:
-      "Consultancy and equipment adjustments to ensure minimal grain loss and optimal crop quality.",
-    icon: <Sprout className="w-10 h-10" />,
+    title: "Crawler Dumper",
+    description: "Heavy-duty crawler dumpers ensuring efficient material transport across challenging muddy fields.",
+    image: "/images/products/crawler-dumpers 2.png",
+    brandName: "Crawler Dumper",
   },
+  {
+    title: "Crawler Dumper High Dump",
+    description: "Efficient Crawler Dumper high dump systems for fast and safe unloading of agricultural yields.",
+    image: "/images/products/crawler-dumpers-high.png",
+    brandName: "Crawler Dumper",
+  }
 ];
 
 export default function AgricultureServicePage() {
@@ -70,16 +71,41 @@ export default function AgricultureServicePage() {
             {details.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-8 border-b-4 border-transparent hover:border-[#FACC15] transition-all duration-300 shadow-sm"
+                className="bg-white border-b-4 border-transparent hover:border-[#FACC15] transition-all duration-300 shadow-sm group overflow-hidden flex flex-col"
               >
-                <div className="text-[#111111] mb-6">{item.icon}</div>
-                <h3 className="text-2xl font-bold text-[#111111] mb-4 font-barlow-condensed uppercase">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 mb-8">{item.description}</p>
-                <button className="inline-flex items-center font-bold text-sm uppercase tracking-wider text-[#111111] gap-2 hover:gap-4 transition-all group">
-                  Learn More <ArrowRight className="w-4 h-4 text-[#FACC15]" />
-                </button>
+                <div className="relative h-80 w-full overflow-hidden bg-gray-200">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-8 flex-grow flex flex-col">
+                  <div className="h-10 mb-6 flex items-center">
+                    {item.brandLogo ? (
+                      <div className="relative h-10 w-32 grayscale hover:grayscale-0 transition-all duration-300">
+                        <Image
+                          src={item.brandLogo}
+                          alt={`${item.title} Logo`}
+                          fill
+                          className="object-contain object-left"
+                        />
+                      </div>
+                    ) : (
+                      <span className="font-bold text-lg text-gray-400 uppercase tracking-wider">
+                        {/* If we needed a brandName fallback it would go here */}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#111111] mb-4 font-barlow-condensed uppercase">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 mb-8 flex-grow">{item.description}</p>
+                  <button className="inline-flex items-center font-bold text-sm uppercase tracking-wider text-[#111111] gap-2 hover:gap-4 transition-all group mt-auto w-fit">
+                    Learn More <ArrowRight className="w-4 h-4 text-[#FACC15]" />
+                  </button>
+                </div>
               </div>
             ))}
           </div>

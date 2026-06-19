@@ -1,7 +1,8 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight, Truck, Zap, Tractor, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Specialized Equipment | Teknika Pesona Kahayan",
@@ -14,19 +15,22 @@ const products = [
     title: "Crawler Dumpers",
     description:
       "Rugged all-terrain dumpers designed for material transport in challenging environments and soft ground.",
-    icon: <Truck className="w-10 h-10" />,
+    image: "/images/products/crawler-dumpers.png",
+    brandLogo: "/images/brands/logo.png",
   },
   {
     title: "Silent Diesel Gensets",
     description:
       "High-performance power generation with noise-reduction technology for urban and sensitive work sites.",
-    icon: <Zap className="w-10 h-10" />,
+    image: "/images/products/genseet.png",
+    brandLogo: "/images/brands/perkins-logo.svg",
   },
   {
     title: "Combine Harvesters",
     description:
       "Advanced agricultural machinery to maximize crop yield and operational efficiency during harvest.",
-    icon: <Tractor className="w-10 h-10" />,
+    image: "/images/products/harvesterr.jpg",
+    brandLogo: "/images/brands/zoomlion-logo.png",
   },
 ];
 
@@ -64,17 +68,30 @@ export default function SpecializedPage() {
             {products.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-8 border-b-4 border-transparent hover:border-[#FACC15] transition-all duration-300 shadow-sm"
+                className="bg-white border-b-4 border-transparent hover:border-[#FACC15] transition-all duration-300 shadow-sm group overflow-hidden flex flex-col"
               >
-                <div className="text-[#111111] mb-6">{item.icon}</div>
-                <h3 className="text-2xl font-bold text-[#111111] mb-4 font-barlow-condensed uppercase">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 mb-8">{item.description}</p>
-                <button className="inline-flex items-center font-bold text-sm uppercase tracking-wider text-[#111111] gap-2 hover:gap-4 transition-all group">
-                  Explore Models{" "}
-                  <ArrowRight className="w-4 h-4 text-[#FACC15]" />
-                </button>
+                <div className="relative h-80 w-full overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-8 flex-grow">
+                  <div className="relative h-10 w-32 mb-6 grayscale hover:grayscale-0 transition-all duration-300">
+                    <Image
+                      src={item.brandLogo}
+                      alt="Brand Logo"
+                      fill
+                      className="object-contain object-left"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#111111] mb-4 font-barlow-condensed uppercase">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 mb-8">{item.description}</p>
+                </div>
               </div>
             ))}
           </div>
