@@ -20,7 +20,10 @@ const navItems = [
     name: "Products",
     href: "/products",
     submenu: [
-      { name: "Material Handling Equipment", href: "/products/material-handling" },
+      {
+        name: "Material Handling Equipment",
+        href: "/products/material-handling",
+      },
       { name: "Crane Systems", href: "/products/cranes" },
       { name: "Specialized Equipment", href: "/products/specialized" },
     ],
@@ -46,7 +49,9 @@ const TRANSPARENT_HERO_PAGES = ["/"];
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
+  const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(
+    null,
+  );
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const dropdownTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -105,21 +110,13 @@ export default function Navbar() {
     >
       <nav className="container mx-auto px-4 lg:px-8 max-w-7xl">
         <div className="flex justify-between items-center">
-
           {/* ===== LOGO ===== */}
-          <Link
-            href="/"
-            className="flex items-center gap-3 group shrink-0"
-          >
+          <Link href="/" className="flex items-center gap-3 group shrink-0">
             <div className="shrink-0 transform group-hover:scale-105 transition-transform duration-300">
               <img
-                src={isTransparent ? "/images/logo-white.png" : "/images/logo.png"}
+                src="/images/logo.png"
                 alt="Teknika Pesona Kahayan Logo"
                 className="w-10 h-10 md:w-11 md:h-11 object-contain"
-                onError={(e) => {
-                  // Fallback jika gambar tidak ada
-                  (e.target as HTMLImageElement).style.display = "none";
-                }}
               />
             </div>
             <div className="flex flex-col leading-tight">
@@ -162,8 +159,8 @@ export default function Navbar() {
                               ? "text-[#FACC15]"
                               : "text-white/90 hover:text-white"
                             : isActive
-                            ? "text-[#FACC15]"
-                            : "text-[#111111] hover:text-[#FACC15]"
+                              ? "text-[#FACC15]"
+                              : "text-[#111111] hover:text-[#FACC15]"
                         }`}
                         aria-expanded={activeDropdown === item.name}
                         aria-haspopup="true"
@@ -212,8 +209,8 @@ export default function Navbar() {
                             ? "text-[#FACC15]"
                             : "text-white/90 hover:text-white"
                           : isActive
-                          ? "text-[#FACC15]"
-                          : "text-[#111111] hover:text-[#FACC15]"
+                            ? "text-[#FACC15]"
+                            : "text-[#111111] hover:text-[#FACC15]"
                       }`}
                     >
                       {item.name}
@@ -263,7 +260,10 @@ export default function Navbar() {
                   (item.href !== "/" && pathname.startsWith(item.href));
 
                 return (
-                  <li key={item.name} className="border-b border-neutral-50 last:border-0">
+                  <li
+                    key={item.name}
+                    className="border-b border-neutral-50 last:border-0"
+                  >
                     {item.submenu ? (
                       <>
                         <button
@@ -278,7 +278,9 @@ export default function Navbar() {
                           <span>{item.name}</span>
                           <ChevronDown
                             className={`w-4 h-4 transition-transform duration-200 text-neutral-400 ${
-                              openMobileSubmenu === item.name ? "rotate-180" : ""
+                              openMobileSubmenu === item.name
+                                ? "rotate-180"
+                                : ""
                             }`}
                           />
                         </button>
