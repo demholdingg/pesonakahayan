@@ -38,8 +38,16 @@ export default function SpecializedPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-[#111111] py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-24 px-6 overflow-hidden">
+        <Image
+          src="/images/hero/hero-specialized.jpg"
+          alt="Specialized industrial equipment"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#111111]/75" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <nav className="flex mb-4 text-sm text-gray-400 uppercase tracking-widest font-bold">
             <Link href="/" className="hover:text-[#FACC15]">
               Home

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowLeft,
   Loader,
@@ -77,8 +78,15 @@ export default function BusinessFocusPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[50vh] w-full flex items-center justify-center bg-[#111111] overflow-hidden">
-        <div className="absolute inset-0 bg-black/40 z-10" />
+      <section className="relative h-[50vh] w-full flex items-center justify-center overflow-hidden">
+        <Image
+          src="/images/hero/hero-business-focus.jpg"
+          alt="Multi-equipment industrial operation"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/65 z-10" />
         <div className="container mx-auto px-4 z-20 text-white">
           <Link
             href="/about"

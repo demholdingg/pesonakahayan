@@ -1,13 +1,25 @@
 import React from "react";
 import { Metadata } from "next";
+import { SEO_CONFIG } from "@/lib/seo-config";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronRight, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Crane Systems | Teknika Pesona Kahayan",
-  description:
-    "Professional crane systems for construction, industrial workshops, and large-scale lifting operations.",
+  title: `Crane Systems & Equipment | ${SEO_CONFIG.company.fullName}`,
+  description: `Professional crane systems from ${SEO_CONFIG.company.fullName}, part of ${SEO_CONFIG.company.parentCompany}. Premium cranes for construction, industrial workshops, and large-scale lifting operations.`,
+  keywords: [
+    "crane rental",
+    "tower crane",
+    "mobile crane",
+    "construction equipment",
+    "lifting equipment",
+    "heavy lifting solutions",
+  ],
+  openGraph: {
+    title: `Crane Systems | ${SEO_CONFIG.company.name}`,
+    description: `Professional crane systems and lifting equipment from ${SEO_CONFIG.company.fullName}.`,
+  },
 };
 
 const products = [
@@ -38,8 +50,16 @@ export default function CranesPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-[#111111] py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-24 px-6 overflow-hidden">
+        <Image
+          src="/images/hero/hero-cranes.jpg"
+          alt="Tower cranes on construction site"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#111111]/75" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <nav className="flex mb-4 text-sm text-gray-400 uppercase tracking-widest font-bold">
             <Link href="/" className="hover:text-[#FACC15]">
               Home

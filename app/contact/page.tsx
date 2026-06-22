@@ -1,20 +1,40 @@
 import React from "react";
 import { Metadata } from "next";
+import { SEO_CONFIG } from "@/lib/seo-config";
 import { Mail, Phone, MapPin, Send, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Teknika Pesona Kahayan",
-  description:
-    "Get in touch with Teknika Pesona Kahayan for industrial equipment rentals and fleet solutions.",
+  title: `Contact ${SEO_CONFIG.company.fullName} | ${SEO_CONFIG.company.parentCompany}`,
+  description: `Get in touch with ${SEO_CONFIG.company.fullName}, part of ${SEO_CONFIG.company.parentCompany}, for industrial equipment rentals, fleet solutions, and professional services. We're ready to help with your industrial needs.`,
+  keywords: [
+    "contact equipment rental",
+    "industrial services contact",
+    "equipment rental inquiry",
+    "fleet rental contact",
+    "machinery rental service",
+  ],
+  openGraph: {
+    title: `Contact Us | ${SEO_CONFIG.company.name}`,
+    description: `Reach out to ${SEO_CONFIG.company.fullName} for your industrial equipment and fleet needs.`,
+  },
 };
 
 const Contact = () => {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-[#111111] py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-32 px-6 overflow-hidden">
+        <Image
+          src="/images/hero/hero-contact.jpg"
+          alt="Professional office building"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#111111]/75" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <nav className="flex mb-4 text-sm text-gray-400 uppercase tracking-widest font-bold">
             <Link href="/" className="hover:text-[#FACC15]">
               Home
@@ -69,7 +89,7 @@ const Contact = () => {
                       Call Us
                     </h4>
                     <p className="text-[#111111] font-medium font-barlow">
-                      +62 21 XXXX XXXX
+                      +627548167
                     </p>
                   </div>
                 </div>

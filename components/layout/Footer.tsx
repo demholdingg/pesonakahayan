@@ -6,11 +6,9 @@ import {
   MessageCircle,
   HardHat,
   ArrowRight,
-  Briefcase,
-  Globe,
-  Camera,
-  Play,
+  Warehouse,
 } from "lucide-react";
+import { FaLinkedin, FaYoutube, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -41,17 +39,17 @@ export default function Footer() {
               2026.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="hover:text-secondary transition-colors">
-                <Briefcase className="w-5 h-5" />
+              <Link href="https://www.linkedin.com/company/pt-teknika-pesona-kahayan/" className="hover:text-secondary transition-colors" aria-label="LinkedIn">
+                <FaLinkedin className="w-5 h-5" />
               </Link>
-              <Link href="#" className="hover:text-secondary transition-colors">
-                <Globe className="w-5 h-5" />
+              <Link href="https://www.youtube.com/channel/UC5VjwnX-rvSBQ41wLjQTZFg" className="hover:text-secondary transition-colors" aria-label="YouTube">
+                <FaYoutube className="w-5 h-5" />
               </Link>
-              <Link href="#" className="hover:text-secondary transition-colors">
-                <Camera className="w-5 h-5" />
+              <Link href="https://www.instagram.com/teknikapesonakahayan/" className="hover:text-secondary transition-colors" aria-label="Instagram">
+                <FaInstagram className="w-5 h-5" />
               </Link>
-              <Link href="#" className="hover:text-secondary transition-colors">
-                <Play className="w-5 h-5" />
+              <Link href="mailto:[info@pesonakahayan.co.id]" className="hover:text-secondary transition-colors" aria-label="Email">
+                <FaEnvelope className="w-5 h-5" />
               </Link>
             </div>
           </div>
@@ -85,11 +83,26 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4 text-sm font-sans">
               <li className="flex items-start space-x-3 text-primary/60">
-                <MapPin className="w-5 h-5 text-secondary shrink-0" />
-                <span>
-                  Jl. Kahayan Raya No. 123, <br />
-                  Palangkaraya, Kalimantan Tengah
-                </span>
+                <MapPin className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                <div className="flex flex-col">
+                  <span className="font-bold text-black mb-1">Head Office</span>
+                  <span>
+                    Gedung 18 Office Park Lt. 25 Unit A2
+                    Jl. Tb. Simatupang No.18 Kebagusan
+                    Pasar Minggu, Jakarta Selatan
+                  </span>
+                </div>
+              </li>
+              <li className="flex items-start space-x-3 text-primary/60 pb-2">
+                <Warehouse className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                <div className="flex flex-col">
+                  <span className="font-bold text-black mb-1">Warehouse</span>
+                  <span>
+                    Jl. Sultan Agung Pondok Ungu Raya, 
+                    RT 001/RW.006, Medan Satria, 
+                    Kota Bekasi, Jawa Barat
+                  </span>
+                </div>
               </li>
               <li className="flex items-center space-x-3 text-primary/60">
                 <Phone className="w-5 h-5 text-secondary shrink-0" />
@@ -101,7 +114,7 @@ export default function Footer() {
               </li>
               <li className="pt-2">
                 <Link
-                  href="https://wa.me/6281234567890"
+                  href="https://wa.me/6287776248028"
                   className="inline-flex items-center space-x-2 bg-secondary text-neutral-dark px-4 py-2 rounded-sm font-bold hover:bg-white transition-colors"
                 >
                   <MessageCircle className="w-4 h-4" />

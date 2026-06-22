@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import { SEO_CONFIG } from "@/lib/seo-config";
 import {
   ChevronRight,
   Target,
@@ -15,20 +16,40 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { CustomerMarquee } from "@/components/Animations";
 
 export const metadata: Metadata = {
-  title: "About Us | Teknika Pesona Kahayan",
-  description:
-    "Learn about Teknika Pesona Kahayan, a leader in premium heavy equipment and fleet solutions for industrial operations.",
+  title: `About ${SEO_CONFIG.company.fullName} | Part of ${SEO_CONFIG.company.parentCompany}`,
+  description: `Learn about ${SEO_CONFIG.company.fullName}, a leader in premium heavy equipment and fleet solutions. Part of ${SEO_CONFIG.company.parentCompany}, we deliver industrial excellence with professional equipment rental and fleet management services.`,
+  keywords: [
+    "about Teknika Pesona Kahayan",
+    "company profile",
+    "industrial equipment provider",
+    "fleet management company",
+    "DEM Holdings subsidiary",
+    "equipment rental company Indonesia",
+  ],
+  openGraph: {
+    title: `About ${SEO_CONFIG.company.fullName}`,
+    description: `Discover the story behind ${SEO_CONFIG.company.fullName} - a subsidiary of ${SEO_CONFIG.company.parentCompany}, delivering premium industrial solutions.`,
+  },
 };
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-[#111111] py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-32 px-6 overflow-hidden">
+        <Image
+          src="/images/hero/hero-about.jpg"
+          alt="Industrial construction site"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/65" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <nav className="flex mb-4 text-sm text-gray-400 uppercase tracking-widest font-bold">
             <Link href="/" className="hover:text-[#FACC15]">
               Home
@@ -153,7 +174,8 @@ export default function AboutPage() {
               Our Trusted <span className="text-[#FACC15]">Customers</span>
             </h2>
             <p className="text-gray-500 font-barlow mt-2 uppercase tracking-widest text-sm">
-              Proven track record with industry leaders
+              Trusted by leading companies across logistics, materials,
+              manufacturing, mining, and industrial sectors.
             </p>
             <div className="w-20 h-1 bg-[#FACC15] mx-auto mt-4"></div>
           </div>

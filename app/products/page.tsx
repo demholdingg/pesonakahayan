@@ -1,6 +1,8 @@
 import React from "react";
 import { Metadata } from "next";
+import { SEO_CONFIG } from "@/lib/seo-config";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ChevronRight,
   Move,
@@ -10,9 +12,21 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Industrial Products | Teknika Pesona Kahayan",
-  description:
-    "Discover our premium range of industrial equipment and machinery. From material handling to crane systems and specialized machinery.",
+  title: `Industrial Products & Equipment | ${SEO_CONFIG.company.fullName}`,
+  description: `Discover our comprehensive range of premium industrial equipment and machinery from ${SEO_CONFIG.company.fullName}. Part of ${SEO_CONFIG.company.parentCompany}, we offer material handling, cranes, and specialized machinery for industrial operations.`,
+  keywords: [
+    "industrial equipment",
+    "material handling equipment",
+    "crane systems",
+    "specialized machinery",
+    "equipment rental products",
+    "heavy machinery",
+    "construction equipment",
+  ],
+  openGraph: {
+    title: `Industrial Products | ${SEO_CONFIG.company.name}`,
+    description: `Premium equipment catalog from ${SEO_CONFIG.company.fullName} - your trusted partner for industrial solutions.`,
+  },
 };
 
 const productCategories = [
@@ -53,10 +67,15 @@ export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-[#111111] py-24 px-6 relative overflow-hidden">
-        {/* Decorative element background */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-[#FACC15]/5 skew-x-12 transform translate-x-1/2" />
-
+      <section className="relative py-24 px-6 overflow-hidden">
+        <Image
+          src="/images/hero/hero-products.jpg"
+          alt="Industrial warehouse with equipment"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#111111]/75" />
         <div className="max-w-7xl mx-auto relative z-10">
           <nav className="flex mb-6 text-sm text-gray-400 uppercase tracking-widest font-bold">
             <Link href="/" className="hover:text-[#FACC15] transition-colors">

@@ -1,45 +1,70 @@
 import React from "react";
 import { Metadata } from "next";
+import { SEO_CONFIG } from "@/lib/seo-config";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronRight, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Silent Diesel Genset Services | Teknika Pesona Kahayan",
-  description:
-    "Reliable power generation solutions with silent diesel gensets for industrial and urban projects.",
+  title: `Silent Diesel Genset Rental | ${SEO_CONFIG.company.fullName}`,
+  description: `Professional silent diesel genset services from ${SEO_CONFIG.company.fullName}, part of ${SEO_CONFIG.company.parentCompany}. Reliable power generation solutions for industrial and urban projects.`,
+  keywords: [
+    "genset rental",
+    "diesel generator",
+    "power generation",
+    "silent genset",
+    "portable generator rental",
+    "emergency power",
+  ],
+  openGraph: {
+    title: `Silent Diesel Genset Services | ${SEO_CONFIG.company.name}`,
+    description: `Reliable power generation solutions with silent diesel gensets from ${SEO_CONFIG.company.fullName}.`,
+  },
 };
 
-const details = [
+type DetailItem = {
+  title: string;
+  description: string;
+  image: string;
+  brandLogo?: string;
+  brandName?: string;
+};
+
+const details: DetailItem[] = [
   {
     title: "Perkins Silent Genset",
-    description: "High-quality silent diesel generators by Perkins, ensuring reliable and quiet power for sensitive environments.",
+    description:
+      "High-quality silent diesel generators by Perkins, ensuring reliable and quiet power for sensitive environments.",
     image: "/images/products/genseet.png",
     brandLogo: "/images/brands/perkins-logo.svg",
   },
   {
     title: "Cummins Open Type Genset",
-    description: "Robust open-type generators from Cummins offering maximum power output and easy maintenance access.",
-    image: "https://images.unsplash.com/photo-1542484674-1db5e33dd919?q=80&w=800&auto=format&fit=crop",
-    brandName: "Cummins",
+    description:
+      "Robust open-type generators from Cummins offering maximum power output and easy maintenance access.",
+    image: "/images/products/cummins-open-genset.webp",
+    brandLogo: "/images/brands/cummins_logo.png",
   },
   {
     title: "Kubota Control Panel",
-    description: "Advanced Kubota control panels for precise monitoring, automation, and synchronization of power systems.",
-    image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?q=80&w=800&auto=format&fit=crop",
-    brandName: "Kubota",
+    description:
+      "Advanced Kubota control panels for precise monitoring, automation, and synchronization of power systems.",
+    image: "/images/products/kubota-control-panel.jpg",
+    brandLogo: "/images/brands/kubota-Logo.svg",
   },
   {
     title: "MTU Genset",
-    description: "Heavy-duty MTU gensets built for mission-critical applications and unmatched operational endurance.",
-    image: "https://images.unsplash.com/photo-1533036814674-d2c67b938c5d?q=80&w=800&auto=format&fit=crop",
-    brandName: "MTU",
+    description:
+      "Heavy-duty MTU gensets built for mission-critical applications and unmatched operational endurance.",
+    image: "/images/products/mtu-genset.png",
+    brandLogo: "/images/brands/mtu-logo.png",
   },
   {
     title: "Cummins Industrial Genset",
-    description: "Powerful Cummins industrial generators designed to handle continuous high-load electrical demands.",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=800&auto=format&fit=crop",
-    brandName: "Cummins",
+    description:
+      "Powerful Cummins industrial generators designed to handle continuous high-load electrical demands.",
+    image: "/images/products/cummins-industrial-genset.webp",
+    brandLogo: "/images/brands/cummins_logo.png",
   },
 ];
 
@@ -47,8 +72,16 @@ export default function GensetServicePage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-[#111111] py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-24 px-6 overflow-hidden">
+        <Image
+          src="/images/hero/hero-genset.jpg"
+          alt="Industrial power generation facility"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#111111]/75" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <nav className="flex mb-4 text-sm text-gray-400 uppercase tracking-widest font-bold">
             <Link href="/" className="hover:text-[#FACC15]">
               Home
@@ -107,9 +140,12 @@ export default function GensetServicePage() {
                   <h3 className="text-2xl font-bold text-[#111111] mb-4 font-barlow-condensed uppercase">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 mb-8 flex-grow">{item.description}</p>
+                  <p className="text-gray-600 mb-8 flex-grow">
+                    {item.description}
+                  </p>
                   <button className="inline-flex items-center font-bold text-sm uppercase tracking-wider text-[#111111] gap-2 hover:gap-4 transition-all group mt-auto w-fit">
-                    Technical Specs <ArrowRight className="w-4 h-4 text-[#FACC15]" />
+                    Technical Specs{" "}
+                    <ArrowRight className="w-4 h-4 text-[#FACC15]" />
                   </button>
                 </div>
               </div>

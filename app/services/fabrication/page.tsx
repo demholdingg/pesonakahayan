@@ -1,47 +1,45 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ChevronRight,
-  Hammer,
-  Wrench,
-  PenTool,
-  ArrowRight,
+  CheckCircle2
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Industrial Fabrication Services | Teknika Pesona Kahayan",
+  title: "Forklift & Heavy Equipment Fabrication | Teknika Pesona Kahayan",
   description:
-    "Custom fabrication, metalwork, and engineering solutions for industrial components.",
+    "Custom fabrication for forklift and heavy equipment including fork extensions, side shifters, bale clamps, drum clamps, and more.",
 };
 
-const details = [
-  {
-    title: "Structural Fabrication",
-    description:
-      "Custom design and assembly of heavy-duty steel structures for industrial facilities and equipment supports.",
-    icon: <Hammer className="w-10 h-10" />,
-  },
-  {
-    title: "Precision Engineering",
-    description:
-      "Manufacturing of specialized machinery parts and components with high-tolerance engineering standards.",
-    icon: <PenTool className="w-10 h-10" />,
-  },
-  {
-    title: "On-site Maintenance",
-    description:
-      "Professional welding and repair services directly at your project location to ensure structural integrity.",
-    icon: <Wrench className="w-10 h-10" />,
-  },
+const customFabrications = [
+  { name: "Fork Extension", image: "/images/products/fork extension forklift.webp" },
+  { name: "Side Shifter", image: "/images/products/side shifter.jpg" },
+  { name: "Bale Clamp", image: "/images/products/bale clamp.png" },
+  { name: "Drum Clamp", image: "/images/products/drum clamp.webp" },
+  { name: "Work Platform", image: "/images/products/work platform.webp" },
+  { name: "Jib Boom", image: "/images/products/jib boom.webp" },
+  { name: "Bucket", image: "/images/products/bucket forklift.jpg" },
+  { name: "Safety Cage", image: "/images/products/safety cage.webp" },
+  { name: "Tire Handler", image: "/images/products/tire handler.jpg" },
+  { name: "Mast & Garpu Custom", image: "/images/products/mast.jpg" }
 ];
 
 export default function FabricationServicePage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-[#111111] py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-24 px-6 overflow-hidden">
+        <Image
+          src="/images/hero/hero-fabrication.jpg"
+          alt="Industrial fabrication and welding"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#111111]/75" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <nav className="flex mb-4 text-sm text-gray-400 uppercase tracking-widest font-bold">
             <Link href="/" className="hover:text-[#FACC15]">
               Home
@@ -54,10 +52,11 @@ export default function FabricationServicePage() {
             <span className="text-[#FACC15]">Fabrication</span>
           </nav>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-barlow-condensed uppercase italic tracking-tighter">
-            Custom <span className="text-[#FACC15]">Fabrication</span>
+            Custom Fabrication <br />
+            <span className="text-[#FACC15]">For Forklift & Heavy Equipment</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl">
-            Delivering precision metalwork and structural engineering solutions
+            Delivering precision metalwork, custom attachments, and structural engineering solutions 
             tailored to your unique industrial requirements.
           </p>
         </div>
@@ -66,24 +65,38 @@ export default function FabricationServicePage() {
       {/* Info Grid */}
       <section className="py-24 px-6 bg-[#F3F4F6]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {details.map((item, index) => (
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#111111] uppercase font-barlow-condensed mb-4 italic">
+              Our Fabrication Products
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              We specialize in fabricating high-quality attachments and components for forklifts and heavy equipment to meet your specific operational needs.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
+            {customFabrications.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-8 border-b-4 border-transparent hover:border-[#FACC15] transition-all duration-300 shadow-sm"
+                className="bg-white border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#FACC15] transition-all duration-300 group flex flex-col"
               >
-                <div className="text-[#111111] mb-6">{item.icon}</div>
-                <h3 className="text-2xl font-bold text-[#111111] mb-4 font-barlow-condensed uppercase">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 mb-8">{item.description}</p>
-                <button className="inline-flex items-center font-bold text-sm uppercase tracking-wider text-[#111111] gap-2 hover:gap-4 transition-all group">
-                  View Projects{" "}
-                  <ArrowRight className="w-4 h-4 text-[#FACC15]" />
-                </button>
+                <div className="relative h-48 w-full overflow-hidden bg-gray-200">
+                  {/* Using standard img tag with placeholder for now */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+                <div className="p-5 flex items-center gap-3 flex-grow">
+                  <CheckCircle2 className="w-5 h-5 text-[#FACC15] shrink-0" />
+                  <span className="font-bold text-[#111111] uppercase tracking-wide text-sm">{item.name}</span>
+                </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 

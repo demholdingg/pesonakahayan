@@ -1,6 +1,8 @@
 import React from "react";
 import { Metadata } from "next";
+import { SEO_CONFIG } from "@/lib/seo-config";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ChevronRight,
   ArrowRight,
@@ -12,9 +14,22 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Industrial Services | Teknika Pesona Kahayan",
-  description:
-    "Expert industrial services including aerial platform rental, heavy equipment maintenance, agriculture solutions, and professional fabrication.",
+  title: `Industrial Services & Equipment Rental | ${SEO_CONFIG.company.fullName}`,
+  description: `Expert industrial services from ${SEO_CONFIG.company.fullName}, part of ${SEO_CONFIG.company.parentCompany}. We provide aerial platform rental, heavy equipment services, agriculture solutions, genset rental, and professional fabrication.`,
+  keywords: [
+    "industrial services",
+    "equipment rental services",
+    "aerial platform rental",
+    "heavy equipment rental",
+    "genset rental",
+    "equipment rental Jakarta",
+    "machinery rental services",
+    "fabrication services",
+  ],
+  openGraph: {
+    title: `Industrial Services | ${SEO_CONFIG.company.name}`,
+    description: `Comprehensive industrial services and equipment rental solutions from ${SEO_CONFIG.company.fullName}.`,
+  },
 };
 
 const serviceCategories = [
@@ -24,7 +39,7 @@ const serviceCategories = [
     description:
       "Premium aerial work platforms for safe and efficient height access in construction and maintenance.",
     icon: <ArrowUpFromLine className="w-12 h-12" />,
-    href: "/services/boomlift-scissorlift",
+    href: "/services/boomlift",
     features: [
       "Electric & Diesel Lifts",
       "Height up to 40m+",
@@ -46,7 +61,7 @@ const serviceCategories = [
     description:
       "Specialized machinery and support for modern agriculture to maximize crop productivity.",
     icon: <Tractor className="w-12 h-12" />,
-    href: "/services/agriculture",
+    href: "/services/agricultur",
     features: ["Combine Harvesters", "Maintenance", "Field Support"],
   },
   {
@@ -73,12 +88,15 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section
-        className="relative py-24 px-6 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-services.jpg')" }} // Ganti dengan path gambar hero Anda
-      >
-        <div className="absolute inset-0 bg-[#111111]/70" />{" "}
-        {/* Overlay gelap untuk keterbacaan teks */}
+      <section className="relative py-24 px-6 overflow-hidden">
+        <Image
+          src="/images/hero/hero-services.jpg"
+          alt="Construction site with heavy machinery"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#111111]/75" />
         <div className="max-w-7xl mx-auto relative z-10">
           <nav className="flex mb-6 text-sm text-gray-400 uppercase tracking-widest font-bold">
             <Link href="/" className="hover:text-[#FACC15] transition-colors">

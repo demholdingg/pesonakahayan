@@ -1,12 +1,33 @@
+import { Metadata } from "next";
+import { SEO_CONFIG } from "@/lib/seo-config";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: `Company Profile | ${SEO_CONFIG.company.fullName}`,
+  description: `Discover the company profile of ${SEO_CONFIG.company.fullName}, a subsidiary of ${SEO_CONFIG.company.parentCompany}. Learn about our commitment to excellence in industrial equipment and fleet management.`,
+  keywords: [
+    "company profile",
+    "corporate information",
+    "company history",
+    "Teknika Pesona Kahayan",
+  ],
+};
 
 export default function CompanyProfilePage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[50vh] w-full flex items-center justify-center bg-[#111111] overflow-hidden">
-        <div className="absolute inset-0 bg-black/40 z-10" />
+      <section className="relative h-[50vh] w-full flex items-center justify-center overflow-hidden">
+        <Image
+          src="/images/hero/hero-company-profile.jpg"
+          alt="Teknika Pesona Kahayan company office"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/65 z-10" />
         <div className="container mx-auto px-4 z-20 text-white">
           <Link
             href="/about"
