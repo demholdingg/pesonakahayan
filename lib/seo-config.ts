@@ -4,7 +4,7 @@
  */
 
 export const SEO_CONFIG = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://teknikkahayan.com",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://pesonakahayan.co.id",
   company: {
     name: "Teknika Pesona Kahayan",
     fullName: "PT Teknika Pesona Kahayan",
@@ -15,14 +15,14 @@ export const SEO_CONFIG = {
     industry: "Industrial Equipment & Fleet Rental",
   },
   contact: {
-    email: "info@teknikkahayan.com",
-    phone: "+62-xxx-xxx-xxxx",
+    email: "info@pesonakahayan.co.id",
+    phone: "++62 812-3456-7890",
     address: "Jakarta, Indonesia",
   },
   social: {
     linkedin: "https://linkedin.com/company/teknika-pesona-kahayan",
-    instagram: "https://instagram.com/teknikkahayan",
-    facebook: "https://facebook.com/teknikkahayan",
+    instagram: "https://instagram.com/pesonakahayan",
+    facebook: "https://facebook.com/pesonakahayan",
   },
   openGraph: {
     type: "website",
@@ -90,7 +90,7 @@ export const generateMetadata = (
       card: "summary_large_image",
       title,
       description,
-      creator: "@teknikkahayan",
+      creator: "@pesonakahayan",
     },
   };
 };
