@@ -102,20 +102,6 @@ const Contact = () => {
 
                 <div className="flex items-start gap-4">
                   <div className="bg-[#FACC15] p-3 text-[#111111]">
-                    <Phone className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold uppercase text-sm tracking-wider text-gray-500 mb-1 font-barlow-condensed">
-                      Call Us
-                    </h4>
-                    <p className="text-[#111111] font-medium font-barlow">
-                      +627548167
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#FACC15] p-3 text-[#111111]">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
