@@ -1,7 +1,14 @@
 import React from "react";
 import { Metadata } from "next";
 import { SEO_CONFIG } from "@/lib/seo-config";
-import { Mail, Phone, MapPin, Send, ChevronRight } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  ChevronRight,
+  Warehouse,
+} from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -78,6 +85,19 @@ const Contact = () => {
                       Pasar Minggu, Jakarta Selatan
                     </p>
                   </div>
+                  <div className="bg-[#FACC15] p-3 text-[#111111]">
+                    <Warehouse className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold uppercase text-sm tracking-wider text-gray-500 mb-1 font-barlow-condensed">
+                      Our Warehouse
+                    </h4>
+                    <p className="text-[#111111] font-medium leading-relaxed font-barlow">
+                      Jl. Sultan Agung Pondok Ungu Raya, RT 001/RW.006
+                      <br />
+                      Medan Satria, Kota Bekasi, Jawa Barat
+                    </p>
+                  </div>
                 </div>
 
                 <div className="flex items-start gap-4">
@@ -112,7 +132,7 @@ const Contact = () => {
               {/* Google Maps Integration */}
               <div className="w-full h-80 bg-gray-200 grayscale hover:grayscale-0 transition-all duration-500 border border-gray-200">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.8656608933256!2d106.8299863!3d-6.2814041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f21f00000001%3A0xc3f9a797828c46!2s18%20Office%20Park!5e0!3m2!1sid!2sid!4v1718612345678!5m2!1sid!2sid"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.485317929369!2d106.9752731!3d-6.1995228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b3079bb1bf9%3A0xbd9bf798ef719ad4!2sWarehouse%20PT.%20Teknika%20Pesona%20Kahayan!5e0!3m2!1sid!2sid!4v1788163175204!5m2!1sid!2sid"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

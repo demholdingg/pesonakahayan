@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   Mail,
   Phone,
+  PhoneCall,
   MapPin,
   MessageCircle,
   HardHat,
@@ -39,16 +40,32 @@ export default function Footer() {
               2026.
             </p>
             <div className="flex space-x-4">
-              <Link href="https://www.linkedin.com/company/pt-teknika-pesona-kahayan/" className="hover:text-secondary transition-colors" aria-label="LinkedIn">
+              <Link
+                href="https://www.linkedin.com/company/pt-teknika-pesona-kahayan/"
+                className="hover:text-secondary transition-colors"
+                aria-label="LinkedIn"
+              >
                 <FaLinkedin className="w-5 h-5" />
               </Link>
-              <Link href="https://www.youtube.com/channel/UC5VjwnX-rvSBQ41wLjQTZFg" className="hover:text-secondary transition-colors" aria-label="YouTube">
+              <Link
+                href="https://www.youtube.com/channel/UC5VjwnX-rvSBQ41wLjQTZFg"
+                className="hover:text-secondary transition-colors"
+                aria-label="YouTube"
+              >
                 <FaYoutube className="w-5 h-5" />
               </Link>
-              <Link href="https://www.instagram.com/teknikapesonakahayan/" className="hover:text-secondary transition-colors" aria-label="Instagram">
+              <Link
+                href="https://www.instagram.com/teknikapesonakahayan/"
+                className="hover:text-secondary transition-colors"
+                aria-label="Instagram"
+              >
                 <FaInstagram className="w-5 h-5" />
               </Link>
-              <Link href="mailto:[info@pesonakahayan.co.id]" className="hover:text-secondary transition-colors" aria-label="Email">
+              <Link
+                href="mailto:[info@pesonakahayan.co.id]"
+                className="hover:text-secondary transition-colors"
+                aria-label="Email"
+              >
                 <FaEnvelope className="w-5 h-5" />
               </Link>
             </div>
@@ -87,9 +104,8 @@ export default function Footer() {
                 <div className="flex flex-col">
                   <span className="font-bold text-black mb-1">Head Office</span>
                   <span>
-                    Gedung 18 Office Park Lt. 25 Unit A2
-                    Jl. Tb. Simatupang No.18 Kebagusan
-                    Pasar Minggu, Jakarta Selatan
+                    Gedung 18 Office Park Lt. 25 Unit A2 Jl. Tb. Simatupang
+                    No.18 Kebagusan Pasar Minggu, Jakarta Selatan
                   </span>
                 </div>
               </li>
@@ -98,16 +114,20 @@ export default function Footer() {
                 <div className="flex flex-col">
                   <span className="font-bold text-black mb-1">Warehouse</span>
                   <span>
-                    Jl. Sultan Agung Pondok Ungu Raya, 
-                    RT 001/RW.006, Medan Satria, 
-                    Kota Bekasi, Jawa Barat
+                    Jl. Sultan Agung Pondok Ungu Raya, RT 001/RW.006, Medan
+                    Satria, Kota Bekasi, Jawa Barat
                   </span>
                 </div>
               </li>
               <li className="flex items-center space-x-3 text-primary/60">
                 <Phone className="w-5 h-5 text-secondary shrink-0" />
-                <span>+62 812-3456-7890</span>
+                <span>+62 877-9834-5443</span>
               </li>
+              <li className="flex items-center space-x-3 text-primary/60">
+                <PhoneCall className="w-5 h-5 text-secondary shrink-0" />
+                <span>+62 877-7624-`8028</span>
+              </li>
+
               <li className="flex items-center space-x-3 text-primary/60">
                 <Mail className="w-5 h-5 text-secondary shrink-0" />
                 <span>info@pesonakahayan.co.id</span>
