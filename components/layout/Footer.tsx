@@ -9,7 +9,13 @@ import {
   ArrowRight,
   Warehouse,
 } from "lucide-react";
-import { FaLinkedin, FaYoutube, FaInstagram, FaEnvelope } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaYoutube,
+  FaInstagram,
+  FaEnvelope,
+  FaTiktok,
+} from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -48,14 +54,14 @@ export default function Footer() {
                 <FaLinkedin className="w-5 h-5" />
               </Link>
               <Link
-                href="https://www.youtube.com/channel/UC5VjwnX-rvSBQ41wLjQTZFg"
+                href="https://youtube.com/@tpk_kahayann?si=yQmMtnc0KHLE_Zio"
                 className="hover:text-secondary transition-colors"
                 aria-label="YouTube"
               >
                 <FaYoutube className="w-5 h-5" />
               </Link>
               <Link
-                href="https://www.instagram.com/teknikapesonakahayan/"
+                href="https://www.instagram.com/tpk_kahayann/"
                 className="hover:text-secondary transition-colors"
                 aria-label="Instagram"
               >
@@ -67,6 +73,13 @@ export default function Footer() {
                 aria-label="Email"
               >
                 <FaEnvelope className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://www.tiktok.com/@tpk_kahayann?_r=1&_t=ZS-9AvRvyQDT8h"
+                className="hover:text-secondary transition-colors"
+                aria-label="TikTok"
+              >
+                <FaTiktok className="w-5 h-5" />
               </Link>
             </div>
           </div>
