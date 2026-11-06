@@ -9,23 +9,25 @@ import {
   Construction,
   Truck,
   ArrowRight,
+  Zap,
+  Network,
 } from "lucide-react";
+import HomeCTA from "@/components/home/HomeCTA";
 
 export const metadata: Metadata = {
-  title: `Industrial Products & Equipment | ${SEO_CONFIG.company.fullName}`,
-  description: `Discover our comprehensive range of premium industrial equipment and machinery from ${SEO_CONFIG.company.fullName}. Part of ${SEO_CONFIG.company.parentCompany}, we offer material handling, cranes, and specialized machinery for industrial operations.`,
+  title: `Industrial Products & Equipment Catalog | ${SEO_CONFIG.company.fullName}`,
+  description: `Explore the product catalog of ${SEO_CONFIG.company.fullName}: material handling equipment, diesel power generation sets, crane systems, and telecommunications hardware.`,
   keywords: [
     "industrial equipment",
     "material handling equipment",
+    "industrial gensets",
     "crane systems",
     "specialized machinery",
-    "equipment rental products",
-    "heavy machinery",
-    "construction equipment",
+    "Teknika Pesona Kahayan",
   ],
   openGraph: {
     title: `Industrial Products | ${SEO_CONFIG.company.name}`,
-    description: `Premium equipment catalog from ${SEO_CONFIG.company.fullName} - your trusted partner for industrial solutions.`,
+    description: `Premium equipment and machinery catalog from ${SEO_CONFIG.company.fullName}.`,
   },
 };
 
@@ -34,63 +36,82 @@ const productCategories = [
     title: "Material Handling",
     subtitle: "Equipment",
     description:
-      "Efficient solutions for moving, lifting, and controlling materials in industrial environments.",
+      "Engineered solutions for moving, lifting, and organizing warehouse and site inventory: Diesel Forklifts, Lithium Electric Forklifts, and Reach Trucks.",
     icon: <Move className="w-12 h-12" />,
     href: "/products/material-handling",
-    features: ["Forklifts", "Material Lifters", "Loading Solutions"],
+    features: ["Forklifts 2.5 - 16T", "Lithium Battery Forklifts", "High-Reach Trucks (12.5m)"],
   },
   {
-    title: "Crane",
+    title: "Crane & Lifting",
     subtitle: "Systems",
     description:
-      "Engineering excellence in lifting technology for complex construction and workshops.",
+      "Vertical lifting engineering for heavy civil construction, workshop fabrication, and shipyard logistics.",
     icon: <Construction className="w-12 h-12" />,
     href: "/products/cranes",
-    features: ["Tower Cranes", "Mobile Cranes", "Overhead Systems"],
+    features: ["Tower Cranes", "Mobile Cranes", "Overhead Crane Systems"],
+  },
+  {
+    title: "Power Generation",
+    subtitle: "Genset Systems",
+    description:
+      "Silent and open-type industrial diesel generators (250 kVA - 2,500+ kVA) powered by Perkins, Cummins, and MTU.",
+    icon: <Zap className="w-12 h-12" />,
+    href: "/services/genset",
+    features: ["Acoustic Canopy (<70dB)", "Synchronizing Panels", "Continuous Duty Rating"],
   },
   {
     title: "Specialized",
-    subtitle: "Equipment",
+    subtitle: "Machinery",
     description:
-      "Providing niche solutions for agriculture, power generation, and difficult terrain.",
+      "Niche equipment tailored for agricultural harvesting, wetland crawler dumpers, and specialized hydraulic forklift attachments.",
     icon: <Truck className="w-12 h-12" />,
     href: "/products/specialized",
     features: [
-      "Crawler Dumpers",
-      "Silent Diesel Gensets",
+      "Tracked Crawler Dumpers",
       "Combine Harvesters",
+      "Special Forklift Clamps",
     ],
+  },
+  {
+    title: "FTTH Telecom",
+    subtitle: "Hardware & Enclosures",
+    description:
+      "Carrier-grade passive optical hardware: Optical Distribution Cabinets (ODC), Optical Distribution Points (ODP), ADSS cable, and subduct HDPE.",
+    icon: <Network className="w-12 h-12" />,
+    href: "/services/ftth-telecom",
+    features: ["ODC 144 / 288 Core", "Pole-Mount ODP Enclosures", "Waterproof Joint Closures"],
   },
 ];
 
 export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-24 px-6 overflow-hidden">
+      <section className="relative py-28 md:py-36 px-6 overflow-hidden bg-[#111111]">
         <Image
           src="/images/hero/hero-products.jpg"
           alt="Industrial warehouse with equipment"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center opacity-30"
           priority
         />
-        <div className="absolute inset-0 bg-[#111111]/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
         <div className="max-w-7xl mx-auto relative z-10">
-          <nav className="flex mb-6 text-sm text-gray-400 uppercase tracking-widest font-bold">
+          <nav className="flex mb-4 text-xs md:text-sm text-gray-400 uppercase tracking-widest font-bold font-barlow-condensed">
             <Link href="/" className="hover:text-[#FACC15] transition-colors">
               Home
             </Link>
-            <ChevronRight className="w-4 h-4 mx-2" />
+            <ChevronRight className="w-4 h-4 mx-2 text-[#FACC15]" />
             <span className="text-[#FACC15]">Our Products</span>
           </nav>
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 font-barlow-condensed uppercase italic tracking-tighter leading-none">
-            Our <span className="text-[#FACC15]">Equipment</span> <br />{" "}
-            Categories
+          <span className="bg-[#FACC15] text-[#111111] px-3.5 py-1 text-xs font-bold uppercase tracking-wider font-barlow-condensed rounded-sm inline-block mb-3">
+            Fleet & Unit Catalog
+          </span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-barlow-condensed uppercase tracking-tight leading-tight">
+            Our Equipment <span className="text-[#FACC15]">Categories</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl border-l-4 border-[#FACC15] pl-6 py-2">
-            Explore our comprehensive range of high-performance industrial
-            machinery designed to meet the rigorous demands of your operations.
+          <p className="text-base md:text-xl text-gray-300 max-w-2xl font-barlow leading-relaxed">
+            Explore our curated portfolio of high-performance machinery and infrastructure hardware built to satisfy the most demanding industrial environments.
           </p>
         </div>
       </section>
@@ -98,45 +119,45 @@ export default function ProductsPage() {
       {/* Categories Grid */}
       <section className="py-24 px-6 bg-[#F3F4F6]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {productCategories.map((cat, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {productCategories.map((category, index) => (
               <div
                 key={index}
-                className="flex flex-col bg-white group shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                className="bg-white p-8 border-b-4 border-transparent hover:border-[#FACC15] transition-all duration-300 shadow-sm flex flex-col group"
               >
-                <div className="p-10 flex-grow">
-                  <div className="text-[#111111] mb-8 group-hover:scale-110 group-hover:text-[#FACC15] transition-transform duration-300">
-                    {cat.icon}
-                  </div>
-                  <h2 className="text-4xl font-bold text-[#111111] mb-4 font-barlow-condensed uppercase leading-tight">
-                    {cat.title} <br />
-                    <span className="text-gray-400 group-hover:text-[#FACC15] transition-colors">
-                      {cat.subtitle}
-                    </span>
-                  </h2>
-                  <p className="text-gray-600 mb-8 leading-relaxed">
-                    {cat.description}
+                <div className="text-[#111111] mb-6 p-3 bg-[#FACC15] w-fit rounded-sm group-hover:scale-105 transition-transform">
+                  {category.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-[#111111] mb-1 font-barlow-condensed uppercase">
+                  {category.title}
+                </h3>
+                <h4 className="text-xl font-bold text-gray-600 mb-4 font-barlow-condensed uppercase">
+                  {category.subtitle}
+                </h4>
+                <p className="text-gray-600 mb-6 font-barlow text-sm leading-relaxed flex-grow">
+                  {category.description}
+                </p>
+                <div className="border-t border-gray-100 pt-4 mb-6">
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest font-barlow-condensed mb-2">
+                    Key Features & Options:
                   </p>
-                  <ul className="space-y-3 mb-10">
-                    {cat.features.map((feature, fIdx) => (
+                  <ul className="space-y-1">
+                    {category.features.map((feature, idx) => (
                       <li
-                        key={fIdx}
-                        className="flex items-center text-sm font-bold uppercase tracking-wide text-gray-500"
+                        key={idx}
+                        className="text-xs text-gray-700 font-barlow flex items-center gap-1.5"
                       >
-                        <div className="w-1.5 h-1.5 bg-[#FACC15] mr-3" />
+                        <span className="w-1.5 h-1.5 bg-[#FACC15] rounded-full" />
                         {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
                 <Link
-                  href={cat.href}
-                  className="bg-[#111111] group-hover:bg-[#FACC15] p-6 flex justify-between items-center transition-colors duration-300"
+                  href={category.href}
+                  className="inline-flex items-center font-bold text-xs uppercase tracking-wider text-[#111111] gap-2 hover:gap-3 transition-all group font-barlow-condensed pt-2"
                 >
-                  <span className="text-white group-hover:text-[#111111] font-bold uppercase tracking-widest text-sm">
-                    Explore Category
-                  </span>
-                  <ArrowRight className="w-5 h-5 text-[#FACC15] group-hover:text-[#111111]" />
+                  View Specifications <ArrowRight className="w-4 h-4 text-[#FACC15]" />
                 </Link>
               </div>
             ))}
@@ -144,26 +165,8 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Support Section */}
-      <section className="bg-white py-20 px-6 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="max-w-2xl">
-            <h3 className="text-3xl font-bold text-[#111111] uppercase font-barlow-condensed mb-4 italic">
-              Don't see what you're looking for?
-            </h3>
-            <p className="text-gray-600 text-lg">
-              We specialize in custom fleet solutions and can source specific
-              machinery to meet your project requirements.
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className="whitespace-nowrap bg-[#FACC15] text-[#111111] px-10 py-5 font-bold uppercase tracking-widest hover:bg-[#111111] hover:text-white transition-all shadow-lg"
-          >
-            Technical Inquiry
-          </Link>
-        </div>
-      </section>
-    </main>
+      {/* CTA Section */}
+      <HomeCTA />
+    </div>
   );
 }

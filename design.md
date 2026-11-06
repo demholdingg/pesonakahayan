@@ -1,8 +1,8 @@
 # Design Documentation — Teknika Pesona Kahayan
 
-> Company: Industrial Equipment & Fleet Rental Services
-> Project: Next.js Website Portfolio & Fleet Management
-> Updated: 17 Juni 2026
+> Company: Integrated Multi-Pillar Industrial & Infrastructure Solutions
+> Project: Next.js Corporate Website & Business Pillars Portfolio
+> Updated: November 2026
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Atribut         | Detail                                                                                                                              |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Nama Perusahaan | Teknika Pesona Kahayan                                                                                                              |
-| Industri        | Industrial Equipment & Fleet Rental                                                                                                 |
-| Tagline         | Premium heavy equipment and fleet solutions for industrial operations                                                               |
-| Fokus Bisnis    | Material Handling, Heavy Duty Equipment, Aerial Work Platformm Crawler Dumper, Agrikultur (Combine Harvester), Genset Silent Diesel |
-| Bahasa Situs    | English (Primary)                                                                                                                   |
+| Nama Perusahaan | PT Teknika Pesona Kahayan (DEM Holdings Group)                                                                                       |
+| Industri        | Power Generation, Industrial Equipment Handling, & Telecommunications Infrastructure                                                |
+| Tagline         | Integrated Solutions for Power Generation, Heavy Equipment & Telecom Infrastructure                                                |
+| 3 Pilar Bisnis  | 1. PLTD Power Generation<br>2. Material Equipment Handling<br>3. FTTH Telecom Infrastruktur                                          |
+| Bahasa Situs    | Indonesian & English                                                                                                                |
 
 ---
 

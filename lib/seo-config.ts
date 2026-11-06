@@ -1,6 +1,7 @@
 /**
- * SEO Configuration - Centralized SEO settings for consistent branding
- * Company: PT Teknika Pesona Kahayan (Part of PT Duta Energi Muliatama / DEM Holdings)
+ * SEO Configuration - Centralized SEO settings for PT Teknika Pesona Kahayan
+ * Multi-pillar enterprise: PLTD Power Generation, Material Equipment Handling, and FTTH Telecom Infrastructure
+ * Part of PT Duta Energi Muliatama / DEM Holdings
  */
 
 export const SEO_CONFIG = {
@@ -9,24 +10,25 @@ export const SEO_CONFIG = {
     name: "Teknika Pesona Kahayan",
     fullName: "PT Teknika Pesona Kahayan",
     parentCompany: "PT Duta Energi Muliatama / DEM Holdings",
-    tagline: "Premium Heavy Equipment & Fleet Solutions",
+    tagline: "Integrated Solutions for Power Generation, Heavy Equipment & Telecom Infrastructure",
     description:
-      "Industrial equipment and fleet rental services providing premium heavy equipment solutions for material handling, aerial work platforms, and specialized machinery rentals.",
-    industry: "Industrial Equipment & Fleet Rental",
+      "Leading integrated enterprise providing PLTD Power Generation, Material Equipment Handling & Fleet Solutions, and FTTH Telecommunications Infrastructure in Indonesia.",
+    industry: "Energy, Industrial Equipment & Telecommunications Infrastructure",
   },
   contact: {
     email: "info@pesonakahayan.co.id",
-    phone: "++62 812-3456-7890",
+    phone: "+62 812-3456-7890",
     address: "Jakarta, Indonesia",
   },
   social: {
-    linkedin: "https://linkedin.com/company/teknika-pesona-kahayan",
-    instagram: "https://instagram.com/pesonakahayan",
-    facebook: "https://facebook.com/pesonakahayan",
+    linkedin: "https://www.linkedin.com/company/pt-teknika-pesona-kahayan/",
+    instagram: "https://www.instagram.com/tpk_kahayann/",
+    youtube: "https://youtube.com/@tpk_kahayann?si=yQmMtnc0KHLE_Zio",
+    tiktok: "https://www.tiktok.com/@tpk_kahayann?_r=1&_t=ZS-9AvRvyQDT8h",
   },
   openGraph: {
     type: "website",
-    locale: "id_ID",
+    locale: "en_US",
     siteName: "Teknika Pesona Kahayan",
   },
   robots: {
@@ -51,14 +53,19 @@ export const generateMetadata = (
     title,
     description,
     keywords: [
-      "industrial equipment",
-      "fleet rental",
-      "heavy equipment",
-      "material handling",
-      "aerial work platform",
-      "equipment rental Jakarta",
-      "genset rental",
-      "construction equipment",
+      "PLTD Power Generation",
+      "diesel power plant Indonesia",
+      "power generation solutions",
+      "industrial genset rental",
+      "material equipment handling",
+      "heavy equipment fleet rental",
+      "forklift rental Jakarta",
+      "FTTH telecom infrastructure",
+      "fiber optic network rollout",
+      "fiber optic cable deployment",
+      "fusion splicing and OTDR",
+      "Teknika Pesona Kahayan",
+      "DEM Holdings",
     ],
     authors: [{ name: SEO_CONFIG.company.fullName }],
     creator: SEO_CONFIG.company.fullName,
@@ -90,7 +97,7 @@ export const generateMetadata = (
       card: "summary_large_image",
       title,
       description,
-      creator: "@pesonakahayan",
+      creator: "@tpk_kahayann",
     },
   };
 };

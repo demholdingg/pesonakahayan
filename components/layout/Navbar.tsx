@@ -17,6 +17,16 @@ const navItems = [
     ],
   },
   {
+    name: "Business Pillars",
+    href: "/business-pillars",
+    submenu: [
+      { name: "Overview of 3 Pillars", href: "/business-pillars" },
+      { name: "⚡ PLTD Power Generation", href: "/business-pillars/pltd-power-generation" },
+      { name: "🚜 Material Equipment Handling", href: "/business-pillars/material-equipment-handling" },
+      { name: "🌐 FTTH Telecom Infrastructure", href: "/business-pillars/ftth-telecom-infrastructure" },
+    ],
+  },
+  {
     name: "Products",
     href: "/products",
     submenu: [
@@ -32,11 +42,12 @@ const navItems = [
     name: "Services",
     href: "/services",
     submenu: [
+      { name: "PLTD Power Generation", href: "/business-pillars/pltd-power-generation" },
       { name: "Boomlift & Scissor Lift", href: "/services/boomlift" },
       { name: "Heavy Duty Equipment", href: "/services/heavy-duty" },
-      { name: "Agricultur / Combine Harvester", href: "/services/agricultur" },
-      { name: "Genset KVA Silent Diesel", href: "/services/genset" },
-      { name: "Fabrication", href: "/services/fabrication" },
+      { name: "FTTH Telecom Rollout", href: "/services/ftth-telecom" },
+      { name: "Silent Diesel Genset", href: "/services/genset" },
+      { name: "Industrial Fabrication", href: "/services/fabrication" },
     ],
   },
   { name: "Supporting Documents", href: "/docs" },

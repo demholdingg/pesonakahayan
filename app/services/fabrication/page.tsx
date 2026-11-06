@@ -23,7 +23,7 @@ const customFabrications = [
   { name: "Bucket", image: "/images/products/bucket forklift.jpg" },
   { name: "Safety Cage", image: "/images/products/safety cage.webp" },
   { name: "Tire Handler", image: "/images/products/tire handler.jpg" },
-  { name: "Mast & Garpu Custom", image: "/images/products/mast.jpg" }
+  { name: "Custom Mast & Forks", image: "/images/products/mast.jpg" }
 ];
 
 export default function FabricationServicePage() {

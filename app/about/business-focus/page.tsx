@@ -1,214 +1,176 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowLeft,
-  Loader,
-  Sprout,
   Zap,
-  Wrench,
-  Pickaxe,
-  Wind,
+  Truck,
+  Network,
+  CheckCircle2,
+  ArrowRight,
 } from "lucide-react";
+import { BUSINESS_PILLARS } from "@/lib/data";
+import { SEO_CONFIG } from "@/lib/seo-config";
+import HomeCTA from "@/components/home/HomeCTA";
 
-const focusAreas = [
-  {
-    title: "Material Handling",
-    desc: "Efficient solutions for moving, lifting, and controlling materials in industrial settings. From forklifts to cranes, we provide equipment that optimizes material flow.",
-    icon: <Loader size={48} />,
-    details: [
-      "Forklift solutions",
-      "Material lifters",
-      "Loading equipment",
-      "Custom handling solutions",
-    ],
-  },
-  {
-    title: "Heavy Duty Equipment",
-    desc: "Powerful machinery for construction, mining, and industrial operations. Our fleet includes excavators, bulldozers, and specialized heavy equipment.",
-    icon: <Pickaxe size={48} />,
-    details: ["Excavators", "Bulldozers", "Graders", "Specialized machinery"],
-  },
-  {
-    title: "Aerial Work Platform",
-    desc: "Safe access solutions for high-altitude industrial and construction tasks. MEWP and scissor lifts for working at height.",
-    icon: <Wind size={48} />,
-    details: [
-      "Boom lifts",
-      "Scissor lifts",
-      "Cherry pickers",
-      "Access platforms",
-    ],
-  },
-  {
-    title: "Crawler Dumper",
-    desc: "Versatile dumper solutions for rugged terrain and challenging environments. All-terrain dumping capabilities for construction sites.",
-    icon: <Wrench size={48} />,
-    details: [
-      "Tracked dumpers",
-      "All-terrain solutions",
-      "Heavy load capacity",
-      "Rough terrain operation",
-    ],
-  },
-  {
-    title: "Agriculture Equipment",
-    desc: "Modern agricultural machinery including combine harvesters for crop operations. Supporting the agricultural sector with cutting-edge technology.",
-    icon: <Sprout size={48} />,
-    details: [
-      "Combine harvesters",
-      "Farming equipment",
-      "Crop solutions",
-      "Seasonal rentals",
-    ],
-  },
-  {
-    title: "Genset Silent Diesel",
-    desc: "Reliable power generation solutions with minimal noise for sensitive operations. Perfect for events, construction, and emergency backup.",
-    icon: <Zap size={48} />,
-    details: [
-      "Silent operation",
-      "Various KVA options",
-      "Fuel efficient",
-      "Portable solutions",
-    ],
-  },
-];
+export const metadata: Metadata = {
+  title: `Business Focus Areas | ${SEO_CONFIG.company.fullName}`,
+  description: `Explore the business focus areas of PT Teknika Pesona Kahayan across 3 core pillars: PLTD Power Generation, Material Equipment Handling, and FTTH Telecom Infrastructure.`,
+  keywords: [
+    "business focus",
+    "PLTD power generation",
+    "material handling",
+    "FTTH telecom",
+    "Teknika Pesona Kahayan",
+  ],
+};
+
+const pillarIcons = {
+  Zap: Zap,
+  Truck: Truck,
+  Network: Network,
+};
 
 export default function BusinessFocusPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[50vh] w-full flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] w-full flex items-center justify-center overflow-hidden bg-[#111111]">
         <Image
           src="/images/hero/hero-business-focus.jpg"
           alt="Multi-equipment industrial operation"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center opacity-35"
           priority
         />
-        <div className="absolute inset-0 bg-black/65 z-10" />
-        <div className="container mx-auto px-4 z-20 text-white">
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+        <div className="container mx-auto px-4 z-20 text-white max-w-7xl">
           <Link
             href="/about"
-            className="inline-flex items-center gap-2 text-[#FACC15] hover:text-yellow-400 mb-6"
+            className="inline-flex items-center gap-2 text-[#FACC15] hover:text-yellow-400 mb-6 font-barlow-condensed font-bold uppercase tracking-wider text-xs"
           >
-            <ArrowLeft size={20} />
-            Back to About
+            <ArrowLeft size={16} />
+            Back to About Us
           </Link>
-          <h1 className="text-5xl md:text-7xl font-bold font-barlow-condensed uppercase leading-tight">
-            Business <br />
-            <span className="text-[#FACC15]">Focus Areas</span>
+          <span className="bg-[#FACC15] text-[#111111] px-3.5 py-1 text-xs font-bold uppercase tracking-wider font-barlow-condensed rounded-sm inline-block mb-3">
+            Focus & Specialization
+          </span>
+          <h1 className="text-4xl md:text-6xl font-bold font-barlow-condensed uppercase leading-tight">
+            Business <span className="text-[#FACC15]">Focus Areas</span>
           </h1>
         </div>
       </section>
 
-      {/* Focus Areas Grid */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <span className="text-[#FACC15] font-bold uppercase tracking-widest text-sm">
-            Our Expertise
-          </span>
-          <h2 className="text-5xl font-bold font-barlow-condensed uppercase mt-4 text-[#111111] mb-12">
-            Specialized Solutions
-          </h2>
+      {/* Intro Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="max-w-4xl">
+            <span className="text-[#111111] bg-[#FACC15] font-bold uppercase tracking-widest text-xs px-3 py-1 font-barlow-condensed inline-block mb-3">
+              Corporate Structure
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold font-barlow-condensed uppercase text-[#111111] mb-6">
+              Three Integrated Business Pillars
+            </h2>
+            <p className="text-base md:text-lg text-gray-700 font-barlow leading-relaxed">
+              To deliver superior engineering value and satisfy the rigorous demands of modern Indonesian industrial operations, PT Teknika Pesona Kahayan organizes its core capabilities into 3 strategic pillars:
+            </p>
+          </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {focusAreas.map((area, index) => (
+      {/* 3 Pillars Deep Grid */}
+      <section className="pb-24 bg-white">
+        <div className="container mx-auto px-4 max-w-7xl space-y-16">
+          {BUSINESS_PILLARS.map((pillar, index) => {
+            const Icon = pillarIcons[pillar.iconName];
+            return (
               <div
-                key={index}
-                className="bg-[#F3F4F6] p-10 border border-gray-200 group hover:border-[#FACC15] hover:bg-white transition-all duration-300"
+                key={pillar.id}
+                className="bg-[#F9FAFB] rounded border border-gray-200 p-8 md:p-12 hover:border-[#FACC15] transition-all"
               >
-                <div className="text-[#FACC15] mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {area.icon}
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-gray-200">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 bg-[#111111] text-[#FACC15] rounded-sm shrink-0">
+                      <Icon className="w-8 h-8" />
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-yellow-600 font-barlow-condensed">
+                        Pillar 0{index + 1} &bull; {pillar.badge}
+                      </span>
+                      <h3 className="text-2xl md:text-4xl font-bold font-barlow-condensed uppercase text-[#111111]">
+                        {pillar.title}
+                      </h3>
+                    </div>
+                  </div>
+                  <Link
+                    href={`/business-pillars/${pillar.slug}`}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#111111] text-white font-bold text-xs uppercase tracking-wider font-barlow-condensed rounded-sm hover:bg-[#FACC15] hover:text-[#111111] transition-colors shrink-0"
+                  >
+                    Explore Pillar Details <ArrowRight size={16} />
+                  </Link>
                 </div>
-                <h3 className="text-2xl font-bold font-barlow-condensed mb-4 uppercase text-[#111111]">
-                  {area.title}
-                </h3>
-                <p className="text-gray-600 font-barlow leading-relaxed mb-6">
-                  {area.desc}
-                </p>
-                <ul className="space-y-2">
-                  {area.details.map((detail, i) => (
-                    <li
-                      key={i}
-                      className="text-sm text-gray-600 font-barlow flex items-center gap-2"
-                    >
-                      <span className="w-2 h-2 bg-[#FACC15] rounded-full"></span>
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
+
+                <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                  <div className="lg:col-span-5 space-y-4">
+                    <p className="text-sm md:text-base font-bold text-gray-800 font-barlow-condensed uppercase">
+                      {pillar.tagline}
+                    </p>
+                    <p className="text-sm text-gray-600 font-barlow leading-relaxed">
+                      {pillar.longDescription}
+                    </p>
+                    <div className="pt-2">
+                      <p className="text-xs font-bold uppercase tracking-wider text-gray-500 font-barlow-condensed mb-2">
+                        Target Sectors:
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {pillar.targetSectors.map((sector, sIdx) => (
+                          <span
+                            key={sIdx}
+                            className="bg-white px-2.5 py-1 rounded text-[11px] font-bold text-gray-700 border border-gray-200 font-barlow-condensed"
+                          >
+                            {sector}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {pillar.capabilities.map((cap, cIdx) => (
+                      <div
+                        key={cIdx}
+                        className="bg-white p-5 rounded border border-gray-200 shadow-sm"
+                      >
+                        <h4 className="font-bold font-barlow-condensed uppercase text-base text-[#111111] mb-2 flex items-center gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-[#FACC15] shrink-0" />
+                          {cap.title}
+                        </h4>
+                        <p className="text-xs text-gray-600 font-barlow leading-relaxed mb-3">
+                          {cap.description}
+                        </p>
+                        <ul className="space-y-1">
+                          {cap.details.slice(0, 2).map((det, dIdx) => (
+                            <li
+                              key={dIdx}
+                              className="text-[11px] text-gray-500 font-barlow flex items-start gap-1.5"
+                            >
+                              <span className="w-1 h-1 bg-[#FACC15] rounded-full mt-1.5 shrink-0" />
+                              <span>{det}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-24 bg-[#F3F4F6]">
-        <div className="container mx-auto px-4">
-          <span className="text-[#FACC15] font-bold uppercase tracking-widest text-sm">
-            The Difference
-          </span>
-          <h2 className="text-5xl font-bold font-barlow-condensed uppercase mt-4 text-[#111111] mb-12">
-            Why These Focus Areas
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-3xl font-bold font-barlow-condensed uppercase text-[#111111] mb-6">
-                Comprehensive Coverage
-              </h3>
-              <p className="text-lg text-gray-700 font-barlow leading-relaxed mb-6">
-                We've strategically selected these focus areas to provide
-                complete solutions for industrial operations. Each area
-                represents a critical need in modern construction and industrial
-                projects.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Diverse equipment portfolio",
-                  "Specialist expertise",
-                  "Complete project support",
-                ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center gap-3 text-gray-700 font-barlow"
-                  >
-                    <span className="w-3 h-3 bg-[#FACC15] rounded-full"></span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold font-barlow-condensed uppercase text-[#111111] mb-6">
-                Industry Leadership
-              </h3>
-              <p className="text-lg text-gray-700 font-barlow leading-relaxed mb-6">
-                With specialized knowledge in each area, we understand the
-                unique demands of your projects and can provide tailored
-                solutions that maximize efficiency and minimize downtime.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Expert technical teams",
-                  "Proven track record",
-                  "Innovative solutions",
-                ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center gap-3 text-gray-700 font-barlow"
-                  >
-                    <span className="w-3 h-3 bg-[#FACC15] rounded-full"></span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+      {/* CTA Section */}
+      <HomeCTA />
+    </div>
   );
 }
